@@ -1,1 +1,3 @@
-console.log("tests")
+import { productArray } from "./DataPack";
+
+console.log(productArray);

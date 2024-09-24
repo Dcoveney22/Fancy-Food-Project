@@ -4,7 +4,7 @@
   "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx src/app.ts",
+    "dev": "tsx src/App.ts",
     "type": "module"
   },
   "keywords": [],
@@ -12,6 +12,10 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/csv-parse": "^1.2.2",
     "@types/node": "^22.5.5"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.6"
   }
 }
