@@ -2,14 +2,14 @@ import fs from 'fs'
 import { parse } from 'csv-parse'
 import { Product } from './ProductClass'
 
+ interface productArray { category: string, item: string, expiryDate: number, price: number, supplier: string}
+    const productArray: productArray[] = []
 
-export let sameDate:string[] 
-      sameDate = []
 
 export class DataPack {
-    productArray = []
+    offProduct: {category: string, item: string, expiryDate: number, price: number, supplier: string}[] = []
     filePath = './data/inventory.csv';
-
+   
     
     async main() {
         await this.streamAndParse();
@@ -22,17 +22,22 @@ export class DataPack {
             })
         );
         for await (const row of parser) {
-            this.productArray.push(row)
-            console.log(this.productArray);
+            productArray.push(row)
+            // console.log(productArray);
+            for (let i = 0; i < productArray.length; i++) {
+                if (productArray[i].category === "Dairy"){
+                    
+                    this.offProduct.push(productArray[i])
+                    
+                }    
+             console.log(this.offProduct)
+            }
     
-//    }for (let i = 0; i < productArray.length; i++) {
-//     const element = productArray[i];
-//         if (productArray[i].expiryDate === "2024-06-10")
-
         }
+
     }  
-}
-    export const app = new DataPack();
+}   
+export const app = new DataPack();
 app.main();
 
 
