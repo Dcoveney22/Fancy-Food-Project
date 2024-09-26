@@ -1,4 +1,4 @@
-import { DataPack, productArray } from "./DataPack";
+import { DataPack } from "./DataPack";
 
 
 class App {
