@@ -1,8 +1,12 @@
 import fs from 'fs'
 import { parse } from 'csv-parse'
+import { Product } from './ProductClass'
 
 export let productArray:string[] 
       productArray = []
+
+export let sameDate:string[] 
+      sameDate = []
 
 export class DataPack {
     filePath = './data/inventory.csv';
@@ -19,15 +23,18 @@ export class DataPack {
         );
         for await (const row of parser) {
             productArray.push(row)
-            // console.log(productArray);
-            
-        }  
-    
-    }
-   
-}
+            console.log(productArray);
 
-export const app = new DataPack();
+   
+    
+   }for (let i = 0; i < productArray.length; i++) {
+    const element = productArray[i];
+        if (productArray[i].expiryDate === "2024-06-10")
+
+}
+}  
+}
+    export const app = new DataPack();
 app.main();
 
 

@@ -1,3 +1,14 @@
-import { productArray } from "./DataPack";
+import { DataPack, productArray } from "./DataPack";
 
-console.log(productArray);
+
+class App {
+    async main() {
+    let getData = new DataPack()
+
+    getData.main()
+    }  
+
+}
+
+const app = new App();
+app.main()
