@@ -3,9 +3,12 @@ import { DataPack } from "./DataPack";
 
 class App {
     async main() {
-    let getData = new DataPack()
+    let dataPack = new DataPack()
 
-    getData.main()
+    await dataPack.main()
+    
+    
+    console.log(dataPack.productArray)
     }  
 
 }

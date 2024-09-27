@@ -3,11 +3,10 @@
 
 ==Tidy function into App.ts file==
 
-+ Create environment file?
-    - Include todays date
-    - Create each supplier date based on quality?
-
  + Create loop to run through the array of objects
  + Create an if statememnt which can compare each object in the array with another element 
 / First time: Start by doing something more simple than by date (ie by Category to ensure understanding of arrays/loops etc.) 
 
++ Create environment file?
+    - Include todays date
+    - Create each supplier date based on quality?
