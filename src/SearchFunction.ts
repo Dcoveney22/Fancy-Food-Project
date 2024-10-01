@@ -38,14 +38,10 @@ export class SearchFunction {
 async main() {
 
     for (let i = 0; i < this.miniProducts.length; i++) {
-        for (let j = 0; i < this.miniProducts[i].length; i++) {
-            if (this.miniProducts.supplier === "Colorful Veggies Co."){
+            if (this.miniProducts[i].supplier === "Colorful Veggies Co."){
               console.log("YES!")
-                   selectedProducts.push(this.miniProducts[i]) 
+               selectedProducts.push(this.miniProducts[i])   
             }
-            
-        }    
-       
           
         // console.log(element);
     }
