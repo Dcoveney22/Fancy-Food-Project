@@ -31,7 +31,7 @@ export class SearchFunction {
         Item: 'Yellow Bell Peppers',
         Expiry_Date: '2024-07-01',
         Price: '$5.00',
-        Supplier: 'Colorful Veggies Co.'
+        supplier: 'Colorful Veggies Co.'
       }
     ]
 
