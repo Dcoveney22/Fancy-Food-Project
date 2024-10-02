@@ -1,10 +1,10 @@
 export class Product {
     constructor(
-        public category: string,
-        public item: string,
-        public expiryDate: number,
-        public price: number,
-        public supplier: string
+        public Category: string,
+        public Item: string,
+        public Expiry_Date: string,
+        public Price: string,
+        public Supplier: string
 
     ){}
 }

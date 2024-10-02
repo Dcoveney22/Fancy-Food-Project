@@ -4,7 +4,7 @@ const selectedProducts: Product[] = []
 
 export class SearchFunction {
     
-   miniProducts: Product[] = [
+   arr: Product[] = [
     {
         Category: 'Vegetables',
         Item: 'White Asparagus',
@@ -31,16 +31,16 @@ export class SearchFunction {
         Item: 'Yellow Bell Peppers',
         Expiry_Date: '2024-07-01',
         Price: '$5.00',
-        supplier: 'Colorful Veggies Co.'
+        Supplier: 'Colorful Veggies Co.'
       }
     ]
 
-async main() {
+async main(arr) {
 
-    for (let i = 0; i < this.miniProducts.length; i++) {
-            if (this.miniProducts[i].supplier === "Colorful Veggies Co."){
+    for (let i = 0; i < arr.length; i++) {
+            if (arr[i].Supplier === "Colorful Veggies Co."){
               console.log("YES!")
-               selectedProducts.push(this.miniProducts[i])   
+               selectedProducts.push(arr[i])   
             }
           
         // console.log(element);
@@ -50,5 +50,5 @@ async main() {
 
 
 }
-const app = new SearchFunction();
-app.main()
+// const app = new SearchFunction();
+// app.main()
