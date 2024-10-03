@@ -40,10 +40,3 @@ import { SupplierQuality } from './SupplierQualityClass'
     }  
 }   
 
-
-
-
-
-
-
-

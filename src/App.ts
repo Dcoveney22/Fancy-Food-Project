@@ -1,6 +1,7 @@
 import { DataPack } from "./DataPack";
 import { SearchFunction } from "./SearchFunction";
 import { SupplierPack } from "./SupplierPack";
+import { AskUser } from "./AskUser";
 
 
 class App {
@@ -15,16 +16,21 @@ class App {
     let supplierPack = new SupplierPack()
 
     await supplierPack.main()
-    console.log(supplierPack.supplierQualityArray)
+    // console.log(supplierPack.supplierQualityArray)
+
+
+    // Ask user for the supplier choice
+    let askUser = new AskUser()
+
+    await askUser.getInput()
+   
+
     // Push items to a new Array based on a common element
     let searchFunction = new SearchFunction()
         
     await searchFunction.main(dataPack.productArray)
     } 
 }
-
-
-
 
 
 const app = new App();
