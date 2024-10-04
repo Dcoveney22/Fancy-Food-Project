@@ -4,7 +4,7 @@ import { SupplierPack } from "./SupplierPack";
 import { AskUser } from "./AskUser";
 
 
-class App {
+export class App {
     async main() {
     //Get the Product Data
     let dataPack = new DataPack()
@@ -23,7 +23,7 @@ class App {
     let askUser = new AskUser()
 
     await askUser.getInput()
-   
+        let userAnswer = askUser.answerArray[0]
 
     // Push items to a new Array based on a common element
     let searchFunction = new SearchFunction()

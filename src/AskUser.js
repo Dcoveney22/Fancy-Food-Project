@@ -41,25 +41,44 @@ var prompts_1 = require("@inquirer/prompts");
 var AskUser = /** @class */ (function () {
     function AskUser() {
     }
+    // async getInput(){
+    //     const supplierQ = await checkbox({
+    //         message: "Please select a Supplier",
+    //         choices: [
+    //             { name: "Gourmet Foods Inc", value: "Gourmet Foods Inc" },
+    //             { name: "Italian Delicacies", value: "Italian Delicacies" },
+    //             { name: "French Cheese Co", value: "French Cheese Co" },
+    //             { name: "Luxury Caviar Co", value: "Luxury Caviar Co" },
+    //             { name: "French Gourmet", value: "French Gourmet" },
+    //             { name: "Seafood Delights", value: "Seafood Delights" },
+    //             { name: "Organic Veggie Farm", value: "Organic Veggie Farm" },
+    //             { name: "Healthy Harvest", value: "Healthy Harvest" },
+    //             { name: "Farm Fresh Produce", value: "Farm Fresh Produce" },
+    //             { name: "Colorful Veggies Co", value: "Colorful Veggies Co"},
+    //             { name: "Urban Greens", value: "Urban Greens"}
+    //         ],
+    //     });
+    //     return supplierQ   
+    //     }
     AskUser.prototype.getInput = function () {
         return __awaiter(this, void 0, void 0, function () {
             var supplierQ;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, (0, prompts_1.checkbox)({
+                    case 0: return [4 /*yield*/, (0, prompts_1.rawlist)({
                             message: "Please select a Supplier",
                             choices: [
                                 { name: "Gourmet Foods Inc", value: "Gourmet Foods Inc" },
                                 { name: "Italian Delicacies", value: "Italian Delicacies" },
-                                // { name: "French Cheese Co"},
-                                // { name: "Luxury Caviar Co"},
-                                // { name: "French Gourmet"},
-                                // { name: "Seafood Delights"},
-                                // { name: "Organic Veggie Farm"},
-                                // { name: "Healthy Harvest"},
-                                // { name: "Farm Fresh Produce"},
-                                // { name: "Colorful Veggies Co"},
-                                // { name: "Urban Greens"}
+                                { name: "French Cheese Co", value: "French Cheese Co" },
+                                { name: "Luxury Caviar Co", value: "Luxury Caviar Co" },
+                                { name: "French Gourmet", value: "French Gourmet" },
+                                { name: "Seafood Delights", value: "Seafood Delights" },
+                                { name: "Organic Veggie Farm", value: "Organic Veggie Farm" },
+                                { name: "Healthy Harvest", value: "Healthy Harvest" },
+                                { name: "Farm Fresh Produce", value: "Farm Fresh Produce" },
+                                { name: "Colorful Veggies Co", value: "Colorful Veggies Co" },
+                                { name: "Urban Greens", value: "Urban Greens" }
                             ],
                         })];
                     case 1:
@@ -72,5 +91,3 @@ var AskUser = /** @class */ (function () {
     return AskUser;
 }());
 exports.AskUser = AskUser;
-var askUser = new AskUser();
-askUser.getInput();
