@@ -7,6 +7,11 @@
  + Create an if statememnt which can compare each object in the array with another element 
 / First time: Start by doing something more simple than by date (ie by Category to ensure understanding of arrays/loops etc.) 
 
+
+Combine the two pieces of data together to asign quality to inventory +
+ + Make the problem as small as possible 
+ forEach? 
+
 + Create environment file?
     - Include todays date
     - Create each supplier date based on quality?

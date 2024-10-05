@@ -12,10 +12,10 @@ import { Product } from './ProductClass'
     filePath = './data/inventory.csv';
    
     
-    async main() {
-        await this.streamAndParse();
-    }
-    async streamAndParse() {
+    // async main() {
+    //     await this.streamAndParse();
+    // }
+    async loadInventory() {
         const parser = fs.createReadStream(this.filePath).pipe(
             parse({
                 delimiter: ',',

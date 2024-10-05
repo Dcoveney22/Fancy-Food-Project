@@ -9,13 +9,13 @@ class App {
     //Get the Product Data
     let dataPack = new DataPack()
 
-    await dataPack.main()
+    await dataPack.loadInventory()
     // console.log(dataPack.productArray)
     
     // Get the supplier Data
     let supplierPack = new SupplierPack()
 
-    await supplierPack.main()
+    await supplierPack.loadSupplier()
     // console.log(supplierPack.supplierQualityArray)
 
 
@@ -26,8 +26,9 @@ class App {
        
     // Push items to a new Array based on a common element
     let searchFunction = new SearchFunction()
-        
-    await searchFunction.main(dataPack.productArray, askUser.answerArray[0])
+    
+    
+    await searchFunction.main(dataPack.productArray, askUser.answer)
     } 
 }
 

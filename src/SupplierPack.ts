@@ -12,10 +12,10 @@ import { SupplierQuality } from './SupplierQualityClass'
     filePath = './data/quality.csv';
    
     
-    async main() {
-        await this.streamAndParse();
-    }
-    async streamAndParse() {
+    // async main() {
+    //     await this.streamAndParse();
+    // }
+    async loadSupplier() {
         const parser = fs.createReadStream(this.filePath).pipe(
             parse({
                 delimiter: ',',
