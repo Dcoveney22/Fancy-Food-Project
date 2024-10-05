@@ -2,9 +2,10 @@ import { Product } from './ProductClass'
 import { AskUser } from './AskUser'
 
 
+
 const selectedProducts: Product[] = []
 
-class SearchFunction {
+export class SearchFunction {
     
   //  arr: Product[] = [
   //   {
@@ -37,10 +38,10 @@ class SearchFunction {
   //     }
   //   ]
 
-async main(arr) {
+async main(arr, input) {
 
     for (let i = 0; i < arr.length; i++) {
-            if (arr[i].Supplier === `${userAnswer}`){
+            if (arr[i].Supplier === `${input}`){
               console.log("YES!")
                selectedProducts.push(arr[i])   
             }
