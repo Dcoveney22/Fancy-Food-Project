@@ -56,7 +56,7 @@ export class DataMerge {
       {
         Category: 'Vegetables',
         Item: 'Yellow Bell Peppers',
-        Expiry_Date: '2024-07-01',
+        Expiry_Date: '2024-07-01', 
         Price: '$5.00',
         Supplier: 'Colorful Veggies Co.'
       }
@@ -67,9 +67,9 @@ async main() {
     for (let i = 0; i < this.productArray.length; i++) {
         for (let j = 0; j < this.supplierArray.length; j++) {
              if (this.productArray[i].Supplier === this.supplierArray[j].Supplier){
-                console.log("YES!")
-            selectedProducts.push(this.productArray[i], this.supplierArray[j].Quality)   
-           
+    
+                this.productArray[i].Quality = this.supplierArray[j].Quality; 
+                selectedProducts.push(this.productArray[i]) 
             
         }
             
