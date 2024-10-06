@@ -2,6 +2,7 @@ import { DataPack } from "./DataPack";
 import { SearchFunction } from "./SearchFunction";
 import { SupplierPack } from "./SupplierPack";
 import { AskUser } from "./AskUser";
+import { DataMerge } from "./DataMerge";
 
 
 class App {
@@ -20,17 +21,25 @@ class App {
 
 
     // Ask user for the supplier choice
-    let askUser = new AskUser()
+    // let askUser = new AskUser()
 
-    await askUser.getInput()
+    // await askUser.getInput()
        
     // Push items to a new Array based on a common element
-    let searchFunction = new SearchFunction()
+    // let searchFunction = new SearchFunction()
     
     
-    await searchFunction.main(dataPack.productArray, askUser.answer)
-    } 
+    // await searchFunction.main(dataPack.productArray, askUser.answer)
+    // } 
+
+    let dataMerge = new DataMerge()
+    
+    
+    await dataMerge.merger(dataPack.productArray, supplierPack.supplierQualityArray)
+
 }
+}
+
 
 
 const app = new App();

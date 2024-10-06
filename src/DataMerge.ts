@@ -62,18 +62,18 @@ export class DataMerge {
       }
     ]
 
-async main() {
+    async merger(inventory: string | any[], supplier: string | any[]) {
 
-    for (let i = 0; i < this.productArray.length; i++) {
-        for (let j = 0; j < this.supplierArray.length; j++) {
-             if (this.productArray[i].Supplier === this.supplierArray[j].Supplier){
-
-                this.productArray[i].Quality = this.supplierArray[j].Quality; 
-                selectedProducts.push(this.productArray[i]) 
-            
-        }
-            
-            }
+      for (let i = 0; i < inventory.length; i++) {
+          for (let j = 0; j < supplier.length; j++) {
+               if (inventory[i].Supplier === supplier[j].Supplier){
+  
+                  inventory[i].Quality = supplier[j].Quality_Score; 
+                  selectedProducts.push(inventory[i]) 
+              
+          }
+              
+              }
           
         // console.log(element);
     }
@@ -82,5 +82,5 @@ async main() {
 
 
 }
-const dataMerge = new DataMerge();
-dataMerge.main()
+// const dataMerge = new DataMerge();
+// dataMerge.main()
