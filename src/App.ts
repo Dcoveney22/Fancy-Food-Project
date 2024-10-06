@@ -21,10 +21,15 @@ class App {
 
     //OPTION: ADD DATA CHOICE TO MERGE?  MAKE THE PROGRAM MORE FLEXIBLE
 
+    //Ask user for the supplier choice
+    let askUser = new AskUser()
+
+    await askUser.getInput()
+
     // MERGE KEY DATA FROM THE TWO CSV FILES
     let dataMerge = new DataMerge()
     
-    await dataMerge.merger(dataPack.productArray, supplierPack.supplierQualityArray)
+    await dataMerge.merger(dataPack.productArray, supplierPack.supplierQualityArray, askUser.answer)
     console.log(dataMerge.selectedProducts)
 }
 }
