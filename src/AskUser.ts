@@ -6,7 +6,7 @@ export class AskUser {
     answerArray = []
             async getInput(){
                 const answerQ = await rawlist({
-                    message: "Please select a Supplier",
+                    message: "Please select the option to add",
                     choices: [
                         { name: "Quality_Score", value: "Quality_Score" },
                     ],
