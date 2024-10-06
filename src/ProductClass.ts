@@ -1,4 +1,3 @@
-import { SupplierQuality } from "./SupplierQualityClass";
 
 export class Product {
     constructor(

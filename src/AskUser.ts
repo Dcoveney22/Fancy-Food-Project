@@ -1,8 +1,6 @@
 import { checkbox } from '@inquirer/prompts'
 import { rawlist } from '@inquirer/prompts'
 
-
-
 export class AskUser {
     answer = ''
     
@@ -25,7 +23,7 @@ export class AskUser {
                 
                 });
                     this.answer = answerQ
-                    // console.log(this.answerArray)
+                 
                     
                   
             }
