@@ -3,6 +3,7 @@ import { SearchFunction } from "./SearchFunction";
 import { SupplierPack } from "./SupplierPack";
 import { AskUser } from "./AskUser";
 import { DataMerge } from "./DataMerge";
+import { DateConverter } from "./DateConverter";
 
 
 class App {
@@ -19,9 +20,7 @@ class App {
     await supplierPack.loadSupplier()
     // console.log(supplierPack.supplierQualityArray)
 
-    //OPTION: ADD DATA CHOICE TO MERGE?  MAKE THE PROGRAM MORE FLEXIBLE
-
-    //Ask user for the supplier choice
+    //ASK USER FOR OPTION CHOICE
     let askUser = new AskUser()
 
     await askUser.getInput()
@@ -30,7 +29,13 @@ class App {
     let dataMerge = new DataMerge()
     
     await dataMerge.merger(dataPack.productArray, supplierPack.supplierQualityArray, askUser.answer)
-    console.log(dataMerge.selectedProducts)
+    // console.log(dataMerge.selectedProducts)
+    
+    //CONVERT DATE INTO DATE FORMAT
+    let dateConverter = new DateConverter()
+
+    await dateConverter.converter(dataMerge.selectedProducts)
+    console.log(dateConverter.productArrayDate)
 }
 }
 
@@ -38,16 +43,3 @@ class App {
 
 const app = new App();
 app.main()
-
-//Search Function Code
-
-    // Ask user for the supplier choice
-    // let askUser = new AskUser()
-
-    // await askUser.getInput()
-    // Push items to a new Array based on a common element
-    // let searchFunction = new SearchFunction()
-    
-    
-    // await searchFunction.main(dataPack.productArray, askUser.answer)
-    // } 
