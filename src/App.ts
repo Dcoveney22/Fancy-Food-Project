@@ -36,7 +36,7 @@ class App {
 
     await dateConverter.converter(dataMerge.selectedProducts)
     console.log(dateConverter.productArrayDate)
-}
+    }
 }
 
 
