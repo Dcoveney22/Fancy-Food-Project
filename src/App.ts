@@ -31,13 +31,19 @@ class App {
     await dataMerge.merger(dataPack.productArray, supplierPack.supplierQualityArray, askUser.answer)
     // console.log(dataMerge.selectedProducts)
     
-    //CONVERT DATE INTO DATE FORMAT
+    //CONVERT STRING DATE INTO DATE FORMAT
     let dateConverter = new DateConverter()
 
     await dateConverter.converter(dataMerge.selectedProducts)
+    // console.log(dateConverter.productArrayDate)
+    
+    //REDUCE DATE BASED ON CUSTOMERS REQUIREMENTS
+    await dateConverter.expChange()
     console.log(dateConverter.productArrayDate)
+
     }
-}
+} 
+
 
 
 
