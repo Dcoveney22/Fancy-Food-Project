@@ -39,9 +39,17 @@ class App {
     
     //REDUCE DATE BASED ON CUSTOMERS REQUIREMENTS
     await dateConverter.expChange()
-    console.log(dateConverter.productArrayDate)
+    // console.log(dateConverter.productArrayDate)
+    
+    // CHECK DATES VS "TODAYS DATE"
+    await dateConverter.dateCompare() 
+
+
 
     }
+
+
+
 } 
 
 

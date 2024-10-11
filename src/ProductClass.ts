@@ -1,12 +1,18 @@
 
 export class Product {
-    constructor(
-        public Category: string,
-        public Item: string,
-        public Expiry_Date: string,
-        public Price: string,
-        public Supplier: string
+    Category: string;
+    Item: string;
+    Expiry_Date: string;
+    Price: string;
+    Supplier: string;
 
-    ){}
+    constructor( Category: string, Item: string, Expiry_Date: string, Price: string, Supplier: string,){
+        this.Category = Category;
+        this.Item = Item,
+        this.Expiry_Date = Expiry_Date,
+        this.Price = Price,
+        this.Supplier = Supplier
+
+    }
 }
 

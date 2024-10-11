@@ -1,11 +1,11 @@
 import { Product } from './ProductClass'
 import { AskUser } from './AskUser'
 import { SupplierQuality } from './SupplierQualityClass'
-import { SuperProduct } from './SuperProductClass'
+import { QualityProduct } from './QualityProduct'
 
 
 export class DataMerge {
-selectedProducts: SuperProduct[] = []
+selectedProducts: QualityProduct[] = []
     async merger(inventory: string | any[], supplier: string | any[], userChoice: string) {
       console.log(userChoice)
       for (let i = 0; i < inventory.length; i++) {
