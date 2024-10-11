@@ -34,15 +34,22 @@ export class DateConverter {
 
     async dateCompare() {
       for (let x = 0; x < this.productArrayDate.length; x++) {
-         if (this.productArrayDate[x].Expiry_Date < this.todaysDate) {
-         console.log("Yes")
-          }
+        if (this.productArrayDate[x].Expiry_Date < this.todaysDate){
+          console.log("YES")
+        }
+       
+        //  (this.productArrayDate[x].Expiry_Date - this.todaysDate) {
+        //   const diff = (this.productArrayDate[x].Expiry_Date - this.todaysDate).days
+        //  console.log(diff)
+
       }
-    
+
     }
     
- 
 }
+    
+ 
+
 
 
     
