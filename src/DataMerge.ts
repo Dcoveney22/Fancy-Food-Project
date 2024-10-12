@@ -13,6 +13,7 @@ selectedProducts: QualityProduct[] = []
                if (inventory[i].Supplier === supplier[j].Supplier){
                 
                   inventory[i].Quality = supplier[j][userChoice];
+                  //call the new class (any)
                   // inventory[i].Quality = supplier[j].Quality_Score; 
                   this.selectedProducts.push(inventory[i]) 
               

@@ -18,7 +18,9 @@ import { Product } from './ProductClass'
         );
         for await (const row of parser) {
             // console.log(row)
-            this.productArray.push(row)
+            const newProduct = new Product(row.Category, row.Item, new Date(row.Expiry_Date), row.Price, row.Supplier)
+            this.productArray.push(newProduct)
+            
         }    
      
     }  

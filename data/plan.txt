@@ -15,3 +15,10 @@ Combine the two pieces of data together to asign quality to inventory +
 + Create environment file?
     - Include todays date
     - Create each supplier date based on quality?
+
+
+    To Do 12.10
+
+    Remove superdate class
+    refactor the expChange
+    remove the ANY

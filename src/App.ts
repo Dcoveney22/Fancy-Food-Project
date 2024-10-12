@@ -12,7 +12,8 @@ class App {
     let dataPack = new DataPack()
 
     await dataPack.loadInventory()
-    // console.log(dataPack.productArray)
+    console.log(dataPack.productArray[0].Expiry_Date instanceof Date)
+    console.log(dataPack.productArray[0])
     
     // GET SUPPLIER DATA
     let supplierPack = new SupplierPack()
@@ -34,16 +35,16 @@ class App {
     //CONVERT STRING DATE INTO DATE FORMAT
     let dateConverter = new DateConverter()
 
-    await dateConverter.converter(dataMerge.selectedProducts)
+
     // console.log(dateConverter.productArrayDate)
     
     //REDUCE DATE BASED ON CUSTOMERS REQUIREMENTS
-    await dateConverter.expChange()
+    await dateConverter.expChange(dataMerge.selectedProducts)
     // console.log(dateConverter.productArrayDate)
     
     // CHECK DATES VS "TODAYS DATE"
     await dateConverter.dateCompare() 
-
+        dateConverter.productArrayDate
 
 
     }
