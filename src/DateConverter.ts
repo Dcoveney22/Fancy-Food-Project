@@ -11,12 +11,10 @@ export class DateConverter {
       for (let i = 0; i < productData.length; i++) {
               productData[i].Expiry_Date = new Date(productData[i].Expiry_Date);
               
-                this.productArrayDate.push(productData[i])                                
-                
-              }
-             
-                
-              }
+                this.productArrayDate.push(productData[i])                                 
+      }
+                   
+    }
       
     async expChange() {
        for (let j = 0; j < this.productArrayDate.length; j++) {
@@ -28,7 +26,6 @@ export class DateConverter {
           this.productArrayDate[j].Expiry_Date.setMonth(this.productArrayDate[j].Expiry_Date.getMonth() - 1)
         
       }
-        
       // console.log(this.productArrayDate)            
     } 
 
@@ -40,6 +37,7 @@ export class DateConverter {
        
         //  (this.productArrayDate[x].Expiry_Date - this.todaysDate) {
         //   const diff = (this.productArrayDate[x].Expiry_Date - this.todaysDate).days
+        //  if(diff < 4)
         //  console.log(diff)
 
       }
