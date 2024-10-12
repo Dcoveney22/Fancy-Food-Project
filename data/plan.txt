@@ -19,6 +19,6 @@ Combine the two pieces of data together to asign quality to inventory +
 
     To Do 12.10
 
-    Remove superdate class
-    refactor the expChange
-    remove the ANY
+    Remove superdate classx
+    refactor the expChangex
+    remove the ANYx

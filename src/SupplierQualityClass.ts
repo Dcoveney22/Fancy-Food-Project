@@ -1,11 +1,11 @@
 export class SupplierQuality {
     Supplier: string;
-    Quality: string;
+    Quality_Score: string;
 
 
     constructor( Supplier: string, Quality: string){
         this.Supplier = Supplier;
-        this.Quality = Quality;
+        this.Quality_Score = Quality;
 
   }
 

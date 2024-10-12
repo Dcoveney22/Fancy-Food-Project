@@ -1,9 +1,9 @@
 import { DataPack } from "./DataPack";
-import { SearchFunction } from "./SearchFunction";
 import { SupplierPack } from "./SupplierPack";
 import { AskUser } from "./AskUser";
 import { DataMerge } from "./DataMerge";
 import { DateConverter } from "./DateConverter";
+import { PriceAdjuster } from "./PriceAdjuster";
 
 
 class App {
@@ -21,20 +21,15 @@ class App {
     await supplierPack.loadSupplier()
     // console.log(supplierPack.supplierQualityArray)
 
-    //ASK USER FOR OPTION CHOICE
-    let askUser = new AskUser()
-
-    await askUser.getInput()
 
     // MERGE KEY DATA FROM THE TWO CSV FILES
     let dataMerge = new DataMerge()
     
-    await dataMerge.merger(dataPack.productArray, supplierPack.supplierQualityArray, askUser.answer)
+    await dataMerge.merger(dataPack.productArray, supplierPack.supplierQualityArray)
     // console.log(dataMerge.selectedProducts)
     
     //CONVERT STRING DATE INTO DATE FORMAT
     let dateConverter = new DateConverter()
-
 
     // console.log(dateConverter.productArrayDate)
     
@@ -43,9 +38,10 @@ class App {
     // console.log(dateConverter.productArrayDate)
     
     // CHECK DATES VS "TODAYS DATE"
-    await dateConverter.dateCompare() 
-        dateConverter.productArrayDate
-
+    let priceAdjuster = new PriceAdjuster()
+    await priceAdjuster.priceChanger(dateConverter.productArrayDate) 
+    //     
+        
 
     }
 
@@ -58,3 +54,11 @@ class App {
 
 const app = new App();
 app.main()
+
+
+
+
+    //ASK USER FOR OPTION CHOICE
+    // let askUser = new AskUser()
+
+    // await askUser.getInput()
