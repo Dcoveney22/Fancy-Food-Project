@@ -3,6 +3,7 @@ import { AskUser } from './AskUser'
 import { SupplierQuality } from './SupplierQualityClass'
 import { QualityProduct } from './QualityProduct'
 import { PricingFunction } from './PricingFunction'
+import { writeFileSync } from "fs";
 
 let priceReducer = new PricingFunction()
  
@@ -20,7 +21,8 @@ export class PriceAdjuster {
         const category = productData[x].Category
         const oneDay = 24 * 60 * 60 * 1000
       if(expDate.getTime() < this.todaysDate.getTime()){
-        console.log(`${productData[x].Item} is out of date`);
+        writeFileSync("data/finalList.txt",`${productData[x].Item} is out of date` + '\n', {
+          flag: "a+"});
         this.outOfDateArray.push(productData[x])
        
         }
@@ -46,15 +48,6 @@ export class PriceAdjuster {
       
       
       }
-// console.log(this.finalArray)
-          // const diff = productData[x].Expiry_Date.getTime() - this.todaysDate.getTime()
-        //   console.log(diff)
-        // }
-       
-        //  (this.productArrayDate[x].Expiry_Date - this.todaysDate) {
-        //   const diff = (this.productArrayDate[x].Expiry_Date - this.todaysDate).days
-        //  if(diff < 4)
-        //  console.log(diff)
 
       
 
