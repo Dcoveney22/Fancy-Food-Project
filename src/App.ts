@@ -12,8 +12,6 @@ class App {
     let dataPack = new DataPack()
 
     await dataPack.loadInventory()
-    console.log(dataPack.productArray[0].Expiry_Date instanceof Date)
-    console.log(dataPack.productArray[0])
     
     // GET SUPPLIER DATA
     let supplierPack = new SupplierPack()
@@ -40,6 +38,7 @@ class App {
     // CHECK DATES VS "TODAYS DATE"
     let priceAdjuster = new PriceAdjuster()
     await priceAdjuster.priceChanger(dateConverter.productArrayDate) 
+    
     //     
         
 

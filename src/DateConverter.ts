@@ -2,7 +2,7 @@ import { Product } from './ProductClass'
 import { AskUser } from './AskUser'
 import { SupplierQuality } from './SupplierQualityClass'
 import { QualityProduct } from './QualityProduct'
-import { SuperProductDate } from './SuperProductDateClass'
+import { SuperProductDate } from './ProductPriceClass'
 
 export class DateConverter {
   productArrayDate: QualityProduct[] = []
