@@ -1,8 +1,5 @@
-import { Product } from './ProductClass'
-import { AskUser } from './AskUser'
-import { SupplierQuality } from './SupplierQualityClass'
 import { QualityProduct } from './QualityProduct'
-import { SuperProductDate } from './ProductPriceClass'
+
 
 export class DateConverter {
   productArrayDate: QualityProduct[] = []
@@ -42,15 +39,6 @@ export class DateConverter {
         if (productData[x].Expiry_Date.getTime() < this.todaysDate.getTime() + 4){
           console.log(productData[x])
       
-
-          // const diff = productData[x].Expiry_Date.getTime() - this.todaysDate.getTime()
-        //   console.log(diff)
-        // }
-       
-        //  (this.productArrayDate[x].Expiry_Date - this.todaysDate) {
-        //   const diff = (this.productArrayDate[x].Expiry_Date - this.todaysDate).days
-        //  if(diff < 4)
-        //  console.log(diff)
 
       }
 

@@ -1,4 +1,3 @@
-import { SupplierQuality } from "./SupplierQualityClass";
 import { Product } from "./ProductClass";
 
 export class QualityProduct extends Product {

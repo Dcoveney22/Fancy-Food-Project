@@ -4,7 +4,8 @@ import { AskUser } from "./AskUser";
 import { DataMerge } from "./DataMerge";
 import { DateConverter } from "./DateConverter";
 import { PriceAdjuster } from "./PriceAdjuster";
-
+import { PricingFunction } from "./PricingFunction";
+import { PrintToFile } from "./PrintToFile";
 
 class App {
     async main() {
@@ -35,12 +36,16 @@ class App {
     await dateConverter.expChange(dataMerge.selectedProducts)
     // console.log(dateConverter.productArrayDate)
     
-    // CHECK DATES VS "TODAYS DATE"
+    // CHECK DATES VS "TODAYS DATE" & CHANGE PRICE
     let priceAdjuster = new PriceAdjuster()
     await priceAdjuster.priceChanger(dateConverter.productArrayDate) 
+    // console.log(priceAdjuster.finalArray)
     
-    //     
-        
+    //PRINT TO FILE
+    let printingFunction = new PrintToFile()
+    await printingFunction.printToFile(priceAdjuster.finalArray)
+   
+    console.log("You can find your new list of products in data/finalList.txt")    
 
     }
 

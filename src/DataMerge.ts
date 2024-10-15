@@ -15,7 +15,7 @@ selectedProducts: QualityProduct[] = []
                   const newProduct = new QualityProduct(inventory[i].Category, inventory[i].Item, inventory[i].Expiry_Date, inventory[i].Price, inventory[i].Supplier, supplier[j].Quality_Score)
                 
                   this.selectedProducts.push(newProduct) 
-                  // console.log(this.selectedProducts)
+               
               
                 }
               
