@@ -1,33 +1,33 @@
 import { QualityProduct } from "./QualityProduct";
 
 
-
 export class PricingFunction{
   finalArray: QualityProduct[] = []     
 
-async outOfStock(oos: QualityProduct[]) {
-     oos.Price = Number(oos.Price.replace("$","")) * 0
-     oos.Price = String(oos.Price)
+    async outOfStock(oos: QualityProduct) {
+        const tempOOSPrice =  Number(oos.Price.replace("$","")) * 0
+        oos.Price = String(tempOOSPrice)
   
-}
+    }
 
-async dairy50(dairyReduce: QualityProduct[]){
+    async dairy50(dairyReduce: QualityProduct){
     
-    dairyReduce.Price = Number(dairyReduce.Price.replace("$","")) * 0.5
-    dairyReduce.Price = String(dairyReduce.Price)
+        const tempDairyPrice = Number(dairyReduce.Price.replace("$","")) * 0.5
+        dairyReduce.Price = String(tempDairyPrice)
 
-}
+        }
 
-async cannedGoods25(cannedReduce: QualityProduct[]){
+    async cannedGoods25(cannedReduce: QualityProduct){
    
-    cannedReduce.Price = Number(cannedReduce.Price.replace("$","")) * 0.25
-    cannedReduce.Price = String(cannedReduce.Price)
-}
+        const tempCannedGoodsPrice = Number(cannedReduce.Price.replace("$","")) * 0.25
+        cannedReduce.Price = String(tempCannedGoodsPrice)
+    }
 
-async vegetables40(vegetablesReduce: QualityProduct[]){
+    async vegetables40(vegetablesReduce: QualityProduct){
     
-    vegetablesReduce.Price = Number(vegetablesReduce.Price.replace("$","")) * 0.40
-    vegetablesReduce.Price = String(vegetablesReduce.Price)
+        const tempVegetablesPrice = Number(vegetablesReduce.Price.replace("$","")) * 0.40
+        vegetablesReduce.Price = String(tempVegetablesPrice)
 
-}
+    }
+    
 }

@@ -1,5 +1,3 @@
-import { SupplierQuality } from "./SupplierQualityClass";
-
 export class ProductPriceClass {
     Category: string;
     Item: string;

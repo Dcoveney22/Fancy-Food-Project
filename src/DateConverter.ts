@@ -6,7 +6,6 @@ export class DateConverter {
   todaysDate = new Date("2024-06-10")
       
     async expChange(productData: QualityProduct[]) {
-      //const =
       
       for (let j = 0; j < productData.length; j++) {
          const date = productData[j].Expiry_Date.getDate()
@@ -14,7 +13,7 @@ export class DateConverter {
          const category = productData[j].Category
          const quality = productData[j].Quality
 
-        if(quality === 'Ok'){
+          if(quality === 'Ok'){
             if (category === 'Dairy')
               productData[j].Expiry_Date.setDate(date - 2)
 
@@ -23,28 +22,14 @@ export class DateConverter {
 
             if (category === 'Canned Goods') 
               productData[j].Expiry_Date.setMonth(month - 1)
-        } 
+          } 
 
-        this.productArrayDate.push(productData[j])
-      }
-      // console.log(this.productArrayDate[1])        
+          this.productArrayDate.push(productData[j])
+      }      
        
     } 
 
-    async dateCompare(productData: QualityProduct[]) {
-      // date = this.todaysDate
-      for (let x = 0; x < productData.length; x++) {
-        const category = productData[x].Category
-      if(category === 'Dairy')
-        if (productData[x].Expiry_Date.getTime() < this.todaysDate.getTime() + 4){
-          console.log(productData[x])
-      
 
-      }
-
-    }
-    
-}
 }
     
  

@@ -1,4 +1,3 @@
-
 export class Product {
     Category: string;
     Item: string;

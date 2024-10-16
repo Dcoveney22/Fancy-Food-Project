@@ -8,13 +8,4 @@ export class SupplierQuality {
         this.Quality_Score = Quality;
 
   }
-
 }
-
-// export class SupplierQuality {
-//     constructor(
-//         public Supplier: string,
-//         public Quality: string,
-
-//     ){}
-// }

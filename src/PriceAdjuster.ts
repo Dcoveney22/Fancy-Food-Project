@@ -24,20 +24,22 @@ export class PriceAdjuster {
       if(expDate.getTime() < this.todaysDate.getTime()){
         priceReducer.outOfStock(productData[x])
         this.finalArray.push(productData[x])
-       
         }
+
       if(category === 'Dairy'){
         if (expDate.getTime() <= this.todaysDate.getTime() + (4 * oneDay) && moreEqualToday){
         priceReducer.dairy50(productData[x])
         this.finalArray.push(productData[x])
+        }
       }
-    }
+      
       if(category === 'Canned Goods'){
         if(expDate.getTime() <= this.todaysDate.getTime() + (90 * oneDay) && moreEqualToday){
         priceReducer.cannedGoods25(productData[x])
         this.finalArray.push(productData[x])
         }
       }
+
       if(category === 'Vegetables'){
         if(expDate.getTime() <= this.todaysDate.getTime() + (3 * oneDay) && moreEqualToday){
           priceReducer.vegetables40(productData[x])
@@ -48,11 +50,7 @@ export class PriceAdjuster {
       
       
       }
-    
-
-
-  }
-    
+    }
 }
 
     
