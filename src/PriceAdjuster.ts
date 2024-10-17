@@ -8,7 +8,7 @@ let priceReducer = new PricingFunction()
 export class PriceAdjuster {
  
   finalArray: QualityProduct[] = []
-  // outOfDateArray: QualityProduct[] = []
+
   todaysDate = new Date("2024-06-10")
       
     async priceChanger (productData: QualityProduct[]) {
@@ -22,27 +22,27 @@ export class PriceAdjuster {
 
 
       if(expDate.getTime() < this.todaysDate.getTime()){
-        priceReducer.outOfStock(productData[x])
+        priceReducer.productReduce(productData[x], 0)
         this.finalArray.push(productData[x])
         }
 
       if(category === 'Dairy'){
         if (expDate.getTime() <= this.todaysDate.getTime() + (4 * oneDay) && moreEqualToday){
-        priceReducer.dairy50(productData[x])
+        priceReducer.productReduce(productData[x], 0.50)
         this.finalArray.push(productData[x])
         }
       }
       
       if(category === 'Canned Goods'){
         if(expDate.getTime() <= this.todaysDate.getTime() + (90 * oneDay) && moreEqualToday){
-        priceReducer.cannedGoods25(productData[x])
+        priceReducer.productReduce(productData[x], 0.25)
         this.finalArray.push(productData[x])
         }
       }
 
       if(category === 'Vegetables'){
         if(expDate.getTime() <= this.todaysDate.getTime() + (3 * oneDay) && moreEqualToday){
-          priceReducer.vegetables40(productData[x])
+          priceReducer.productReduce(productData[x], 0.40)
           this.finalArray.push(productData[x])
         }
       }
