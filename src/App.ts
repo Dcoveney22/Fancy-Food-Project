@@ -1,5 +1,6 @@
 import { DataPack } from "./DataPack";
-import { DataPackDB } from "./dbConnect";
+import { DataPackDB } from "./dbConnectInventory";
+import { SupplierDataPackDB } from "./dbConnectSupplier";
 import { SupplierPack } from "./SupplierPack";
 import { DataMerge } from "./DataMerge";
 import { DateConverter } from "./DateConverter";
@@ -8,30 +9,33 @@ import { PrintToFile } from "./PrintToFile";
 
 class App {
   async main() {
-    // GET PRODUCT DATA
+    // GET PRODUCT DATA from csv in file
     // let dataPack = new DataPack();
-
     // await dataPack.loadInventory();
 
+    // GET PRODUCT DATA from postgres db
     let dataPackDB = new DataPackDB();
 
-    await dataPackDB.getInventoryDB();
-    console.log(dataPackDB.inventoryData);
+    await dataPackDB.loadInventoryDB();
+    // console.log(dataPackDB.inventoryDataArray);
 
     // GET SUPPLIER DATA
-    let supplierPack = new SupplierPack();
+    // let supplierPack = new SupplierPack();
+    // await supplierPack.loadSupplier();
+    // console.log(supplierPack.supplierQualityArray);
+    let supplierDataPackDB = new SupplierDataPackDB();
 
-    await supplierPack.loadSupplier();
-    //console.log(supplierPack.supplierQualityArray)
+    await supplierDataPackDB.loadSupplierDB();
+    // console.log(supplierDataPackDB.supplierDataArray);
 
     // MERGE KEY DATA FROM THE TWO CSV FILES
     let dataMerge = new DataMerge();
 
     await dataMerge.merger(
-      dataPack.productArray,
-      supplierPack.supplierQualityArray
+      dataPackDB.inventoryDataArray,
+      supplierDataPackDB.supplierDataArray
     );
-    // console.log(dataMerge.selectedProducts)
+    // console.log(dataMerge.selectedProducts);
 
     //CONVERT STRING DATE INTO DATE FORMAT
     let dateConverter = new DateConverter();
@@ -40,7 +44,7 @@ class App {
 
     //REDUCE DATE BASED ON CUSTOMERS REQUIREMENTS
     await dateConverter.expChange(dataMerge.selectedProducts);
-    // console.log(dateConverter.productArrayDate)
+    // console.log(dateConverter.productArrayDate);
 
     // CHECK DATES VS "TODAYS DATE" & CHANGE PRICE
     let priceAdjuster = new PriceAdjuster();
@@ -50,7 +54,7 @@ class App {
     //PRINT TO FILE
     let printingFunction = new PrintToFile();
     await printingFunction.printToFile(priceAdjuster.finalArray);
-
+    // console.log(priceAdjuster.finalArray);
     console.log("You can find your new list of products in data/finalList.txt");
   }
 }

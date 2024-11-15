@@ -2,7 +2,7 @@ import { Client } from "pg";
 import { Product } from "./ProductClass";
 
 export class DataPackDB {
-  inventoryData: Product[] = [];
+  inventoryDataArray: Product[] = [];
 
   client = new Client({
     host: "127.0.0.1",
@@ -11,7 +11,7 @@ export class DataPackDB {
     user: "postgres",
     password: "p@ssword1",
   });
-  async main() {
+  async loadInventoryDB() {
     await this.client.connect();
     await this.getInventoryDB();
     await this.client.end();
@@ -20,6 +20,7 @@ export class DataPackDB {
   async getInventoryDB() {
     const res = await this.client.query("SELECT * FROM inventory");
     res.rows.forEach((inventoryData) => {
+      this.inventoryDataArray.push(inventoryData);
       console.log(inventoryData);
     });
   }
