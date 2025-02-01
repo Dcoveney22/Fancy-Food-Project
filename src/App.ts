@@ -44,7 +44,7 @@ class App {
 
     //REDUCE DATE BASED ON CUSTOMERS REQUIREMENTS
     await dateConverter.expChange(dataMerge.selectedProducts);
-    // console.log(dateConverter.productArrayDate);
+    console.log(dataMerge.selectedProducts);
 
     // CHECK DATES VS "TODAYS DATE" & CHANGE PRICE
     let priceAdjuster = new PriceAdjuster();

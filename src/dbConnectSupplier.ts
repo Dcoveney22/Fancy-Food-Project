@@ -20,7 +20,9 @@ export class SupplierDataPackDB {
   async getSupplierDB() {
     const res = await this.client.query("SELECT * FROM supplierQuality");
     res.rows.forEach((supplierData) => {
-      this.supplierDataArray.push(supplierData);
+      this.supplierDataArray.push(
+        new SupplierQuality(supplierData.supplier, supplierData.quality_score)
+      );
       //   console.log(supplierData);
     });
   }

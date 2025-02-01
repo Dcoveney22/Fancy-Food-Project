@@ -20,9 +20,18 @@ export class DataPackDB {
   async getInventoryDB() {
     const res = await this.client.query("SELECT * FROM inventory");
     res.rows.forEach((inventoryData) => {
-      this.inventoryDataArray.push(inventoryData);
-      console.log(inventoryData);
+      this.inventoryDataArray.push(
+        new Product(
+          inventoryData.category,
+          inventoryData.item,
+          inventoryData.expiry_date,
+          inventoryData.price,
+          inventoryData.supplier
+        )
+      );
+      // console.log(inventoryData);
     });
+    console.log(this.inventoryDataArray.length);
   }
 }
 
